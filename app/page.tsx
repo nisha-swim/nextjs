@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-
+import styles from "./Home.module.css";
 export default function Home() {
 
   const [count, setCount] = useState(0);
@@ -18,23 +18,17 @@ export default function Home() {
   };
 
   return (
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      height: "100vh",
-      gap: "20px"
-    }}>
+    <div className={styles.container}>
+    
       
-      <h1>Counter App 🔢</h1>
+      <h1 className={styles.title}>Counter App 🔢</h1>
 
-      <h2>{count}</h2>
+      <h2 className={styles.count}>{count}</h2>
 
-      <div style={{ display: "flex", gap: "10px" }}>
-        <button onClick={increment}>➕ Increment</button>
-        <button onClick={decrement}>➖ Decrement</button>
-        <button onClick={reset}>🔄 Reset</button>
+      <div className={styles.buttonGroup}>
+        <button className={`${styles.btn} ${styles.increment}`} onClick={increment}>➕ Increment</button>
+        <button className={`${styles.btn} ${styles.decrement}`} onClick={decrement}>➖ Decrement</button>
+        <button className={`${styles.btn} ${styles.reset}`} onClick={reset}>🔄 Reset</button>
       </div>
 
     </div>
